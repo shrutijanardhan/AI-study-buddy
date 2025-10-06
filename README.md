@@ -20,9 +20,9 @@ Setup
 git clone https://github.com/yourusername/ai-study-buddy.git
 cd ai-study-buddy
 
-2.OPENAI_API_KEY = your_api_key_here
+2. OPENAI_API_KEY = your_api_key_here
 
-3.Install Vercel CLI if not installed:
+3. Install Vercel CLI if not installed:
 npm i -g vercel
 vercel login
 vercel
