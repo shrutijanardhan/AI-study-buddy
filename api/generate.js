@@ -1,7 +1,8 @@
-// api/generate.js
 export default async function handler(req, res) {
   try {
-    const { topic } = await req.json();
+    // In Vercel's environment, need to await req.json() properly
+    const body = (await req.json) ? await req.json() : req.body;
+    const topic = body?.topic;
 
     if (!topic) {
       return res.status(400).json({ error: "Missing topic" });
@@ -29,10 +30,18 @@ Keep it short and structured.
     });
 
     const data = await response.json();
-    const message = data.choices?.[0]?.message?.content || "No response.";
+
+    // Debugging logs
+    console.log("OpenAI response:", data);
+
+    const message = data?.choices?.[0]?.message?.content;
+    if (!message) {
+      return res.status(500).json({ error: "No message from OpenAI", data });
+    }
+
     return res.status(200).json({ content: message });
   } catch (err) {
-    console.error("Error:", err);
+    console.error("Server Error:", err);
     return res.status(500).json({ error: "Internal server error" });
   }
 }
