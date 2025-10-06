@@ -1,42 +1,30 @@
-AI Study Buddy
+📚 AI Study Buddy
 
-A simple AI-powered study guide that helps you plan your learning.
-Enter any topic, and it generates a structured study plan with subtopics, order, and practice ideas.
+An AI-powered study guide that helps you plan your learning journey.  
+Enter a topic and get a personalized, structured study plan with key subtopics, order, and mini projects.
 
 Features
-
-Generate study plans for any topic
-
-Clean and simple interface
-
-Powered by OpenAI GPT model
+- Generates AI study plans using GPT-4o-mini  
+- Simple UI (HTML + CSS + JS)  
+- Secure backend (serverless function) — API key is safe  
+- Hosted on [Vercel](https://vercel.com)
 
 Tech Stack
-
-HTML
-
-CSS
-
-JavaScript
-
-OpenAI API
+- Frontend: HTML, CSS, JavaScript  
+- Backend: Serverless API (Vercel)  
+- AI Model: OpenAI GPT-4o-mini  
 
 Setup
 
-Clone the repository or download the files.
+1. Clone the repo
+git clone https://github.com/yourusername/ai-study-buddy.git
+cd ai-study-buddy
 
-Open script.js and replace:
+2.OPENAI_API_KEY = your_api_key_here
 
-const API_KEY = "YOUR_API_KEY";
-
-with your OpenAI API key.
-
-Open index.html in your browser.
-
-Usage
-
-Type a topic (e.g. "React Basics" or "Python OOP").
-
-Click Generate Plan.
-
-View your AI-generated study roadmap.
+3.Install Vercel CLI if not installed:
+npm i -g vercel
+vercel login
+vercel
+Then deploy:
+vercel --prod
